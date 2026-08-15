@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KORRAVEE — ไดอารี่พนักงานออฟฟิศ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">KOR<span>RAVEE</span></div>
+      <div class="datebar">
+        <button id="prevDay" aria-label="วันก่อนหน้า">‹</button>
+        <div id="dateLabel">—</div>
+        <button id="nextDay" aria-label="วันถัดไป">›</button>
+        <button id="todayBtn">วันนี้</button>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <p class="section-title">กำหนดการ &amp; อีเมล <span class="count" id="tlCount">0</span></p>
+          <ul class="timeline" id="timeline"></ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <p class="section-title">Lifestyle log</p>
+
+          <div class="rings-panel" id="ringsPanel">
+            <div class="ring-graphic">
+              <svg id="ringSvg" viewBox="0 0 120 120" width="104" height="104" role="img" aria-label="สรุปกิจกรรมวันนี้"></svg>
+              <div class="ring-total" id="ringTotal">0</div>
+            </div>
+            <ul class="ring-legend" id="ringLegend"></ul>
+          </div>
+
+          <div class="chips" id="catChips"></div>
+
+          <div class="log-form">
+            <textarea id="logText" placeholder="วันนี้เป็นยังไงบ้าง... เช่น วิ่ง 5 กม., กินสลัดไก่มื้อเที่ยง"></textarea>
+            <div class="log-form-row">
+              <select id="logCat"></select>
+              <input type="text" id="customCatInput" placeholder="หมวดใหม่..." style="display:none;">
+              <button id="addLog">+ เพิ่มบันทึก</button>
+            </div>
+          </div>
+
+          <ul class="log-list" id="logList"></ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="note">
+      ข้อมูล "กำหนดการ &amp; อีเมล" เป็นข้อมูลตัวอย่างสำหรับสาธิตการทำงาน (ยังไม่ได้เชื่อมต่อ Gmail/Google Calendar จริง — ดู <code>script.js</code> ส่วน "Mock email/calendar generator" เพื่อแทนที่ด้วย API จริง) — ส่วน Lifestyle log บันทึกลง Firebase Firestore (โปรเจกต์ korworkshop-1cd5d) แบบเรียลไทม์ และคุณสามารถเพิ่มหมวดหมู่ของตัวเองได้จากช่อง "หมวดใหม่"
+    </p>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
